@@ -450,7 +450,8 @@ namespace B2CVerifiedID {
                 int pinCode = RandomNumberGenerator.GetInt32( 1, int.Parse( "".PadRight( issuancePinCodeLength, '9' ) ) );
                 SetPinCode( request, string.Format( "{0:D" + issuancePinCodeLength.ToString() + "}", pinCode ) );
             }
-            SetExpirationDate( request );
+            //SetExpirationDate( request );
+            Console.WriteLine("Expiration Date NOT set per code alteration");
             return request;
         }
         private IssuanceRequest SetExpirationDate( IssuanceRequest request) {
